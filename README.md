@@ -1,17 +1,21 @@
-# ethermint-gateway：
+# cmp-gateway：
 
 ## Abstract
-ethermint-gateway is the gateway service of ethermint blockchain. Its purpose is to better help ordinary programmers 
-who do not understand the blockchain to complete the on-chain operation through etherming-gateway.
+cmp-gateway is the gateway service of cmp blockchain. Its purpose is to better help ordinary programmers 
+who do not understand the blockchain to complete the on-chain operation through cmp-gateway.
 
 ## Project launch:
 
-ethermint-gateway completes compilation or runtime with go build/run. The default service listening address is 127.0.0.1:8000. To change the value, run the -addr command. 
-go run ethermint-gateway -addr 127.0.0.1:8080 
+cmp-gateway completes compilation or runtime with go build/run. The default service listening address is 127.0.0.1:8000. To change the value, run the -addr command. 
 
+ ```
+  ./gateway-server-go -addr 127.0.0.1:8080 (runtime with go build)  
+  or  
+  go run main.go -addr 127.0.0.1:8080  (runtime with go run)
+ ```
 
 ## configuration file:
-We put the ethermint-gateway configuration file in config.yaml
+We put the cmp-gateway configuration file in config.yaml
 
 
 ## API:
@@ -50,9 +54,9 @@ We put the ethermint-gateway configuration file in config.yaml
       
       
       
-### ethermint base group
+### cmp base group
 
-- 1./v1/eth/base/getBalance: Query the user's non-contract account balance on ethermint blockchain by user name.
+- 1./v1/eth/base/getBalance: Query the user's non-contract account balance on cmp blockchain by user name.
 
       method get
       name="mykey1" and block_number="" //block_number is used to query the account balance at a certain height, default ""
@@ -144,7 +148,7 @@ We put the ethermint-gateway configuration file in config.yaml
          }
 
          
-### ethermint contract group
+### cmp contract group
 
 - 14./v1/eth/contract/view : Execute the simulation contract and get the simulation result.
  
@@ -181,7 +185,7 @@ We put the ethermint-gateway configuration file in config.yaml
          }
          
          
- ### ethermint erc20 contract group    
+ ### cmp erc20 contract group    
  - 17./v1/eth/contract/erc20/name: Query the internal name of the contract by user name and contract name defined by us.
  
        method get
